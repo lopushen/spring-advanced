@@ -4,14 +4,14 @@ package com.loplop.springadvanced.tut19.beans;
  * Created by i.lopushen on 24/06/2016.
  */
 public class Logger {
-    private ConsoleWriter consoleWriter;
-    private FileWriter fileWriter;
+    private LogWriter consoleWriter;
+    private LogWriter fileWriter;
 
-    public void setConsoleWriter(ConsoleWriter consoleWriter) {
+    public void setConsoleWriter(LogWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
 
-    public void setFileWriter(FileWriter fileWriter) {
+    public void setFileWriter(LogWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
 
