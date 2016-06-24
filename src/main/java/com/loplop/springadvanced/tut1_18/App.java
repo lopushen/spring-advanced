@@ -1,9 +1,9 @@
-package com.loplop.springadvanced;
+package com.loplop.springadvanced.tut1_18;
 
-import com.loplop.springadvanced.beans.Address;
-import com.loplop.springadvanced.beans.FruitBasket;
-import com.loplop.springadvanced.beans.Jungle;
-import com.loplop.springadvanced.beans.Person;
+import com.loplop.springadvanced.tut1_18.beans.Address;
+import com.loplop.springadvanced.tut1_18.beans.FoodBeanMap;
+import com.loplop.springadvanced.tut1_18.beans.FoodMapJungle;
+import com.loplop.springadvanced.tut1_18.beans.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -24,10 +24,12 @@ public class App {
 
         System.out.println(address);
 
-        Jungle fruitBasket = context.getBean("jungle", Jungle.class);
+        FoodMapJungle jungleFoods = context.getBean("jungleFoods", FoodMapJungle.class);
 
-        System.out.println(fruitBasket);
+        System.out.println(jungleFoods);
+        FoodBeanMap foodBeanMap = context.getBean("jungleAnimalFoods", FoodBeanMap.class);
 
+        System.out.println(foodBeanMap);
         ((ClassPathXmlApplicationContext) context).close();
     }
 }

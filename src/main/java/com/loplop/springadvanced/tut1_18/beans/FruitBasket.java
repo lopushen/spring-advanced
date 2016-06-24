@@ -1,9 +1,6 @@
-package com.loplop.springadvanced.beans;
+package com.loplop.springadvanced.tut1_18.beans;
 
-import java.util.List;
 import java.util.Set;
-import java.util.StringJoiner;
-import java.util.stream.Collectors;
 
 /**
  * Created by i.lopushen on 24/06/2016.

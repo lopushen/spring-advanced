@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 
 default-init-method="init" default-destroy-method="destroy">
-    <bean id="person" class="com.loplop.springadvanced.beans.Person"
+    <bean id="person" class="com.loplop.springadvanced.tut1_18.beans.Person"
     init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance">
         <constructor-arg name="id" value="777" type="int"/>
         <constructor-arg name="name" value="John" type="java.lang.String"/>
@@ -15,7 +15,7 @@ default-init-method="init" default-destroy-method="destroy">
     </bean>
 
 
-    <bean id="person2" class="com.loplop.springadvanced.beans.Person"
+    <bean id="person2" class="com.loplop.springadvanced.tut1_18.beans.Person"
           init-method="onCreate" destroy-method="onDestroy" factory-bean="personFactory" factory-method="createPerson">
         <constructor-arg name="id" value="76678" type="int"/>
         <constructor-arg name="name" value="Mike" type="java.lang.String"/>
@@ -25,21 +25,21 @@ default-init-method="init" default-destroy-method="destroy">
     </bean>
 
 
-    <bean id="personFactory" class="com.loplop.springadvanced.beans.PersonFactory"/>
+    <bean id="personFactory" class="com.loplop.springadvanced.tut1_18.beans.PersonFactory"/>
 
 
 
-    <bean id="address" class="com.loplop.springadvanced.beans.Address">
+    <bean id="address" class="com.loplop.springadvanced.tut1_18.beans.Address">
         <constructor-arg name="postCode" value="ff777" type="java.lang.String"/>
         <constructor-arg name="street" value="Govno" type="java.lang.String"/>
 
     </bean>
 
 
-    <bean id="address2" class="com.loplop.springadvanced.beans.Address" p:street="Pstreet name" p:postCode="ppp888">
+    <bean id="address2" class="com.loplop.springadvanced.tut1_18.beans.Address" p:street="Pstreet name" p:postCode="ppp888">
     </bean>
     
-    <bean id="basket" class="com.loplop.springadvanced.beans.FruitBasket">
+    <bean id="basket" class="com.loplop.springadvanced.tut1_18.beans.FruitBasket">
 
         <constructor-arg index="0" value="John's basket"/>
         <constructor-arg index="1">
@@ -52,9 +52,9 @@ default-init-method="init" default-destroy-method="destroy">
         </constructor-arg>
     </bean>
 
-    <bean id="jungle" class="com.loplop.springadvanced.beans.Jungle">
+    <bean id="jungle" class="com.loplop.springadvanced.tut1_18.beans.Jungle">
         <property name="largest" >
-            <bean class="com.loplop.springadvanced.beans.Animal">
+            <bean class="com.loplop.springadvanced.tut1_18.beans.Animal">
                 <property name="name" value="Inner Richard"/>
                 <property name="type" value="inner elephant"/>
             </bean>
@@ -68,16 +68,35 @@ default-init-method="init" default-destroy-method="destroy">
         </property>
     </bean>
 
-    <bean id="lion" class="com.loplop.springadvanced.beans.Animal">
+    <bean id="lion" class="com.loplop.springadvanced.tut1_18.beans.Animal">
         <property name="name" value="Igor"/>
         <property name="type" value="lion"/>
     </bean>
-    <bean id="elephant" class="com.loplop.springadvanced.beans.Animal">
+    <bean id="elephant" class="com.loplop.springadvanced.tut1_18.beans.Animal">
         <property name="name" value="Richard"/>
         <property name="type" value="elephant"/>
     </bean>
-    <bean id="snake" class="com.loplop.springadvanced.beans.Animal">
+    <bean id="snake" class="com.loplop.springadvanced.tut1_18.beans.Animal">
         <property name="name" value="Bob"/>
         <property name="type" value="snake"/>
+    </bean>
+
+    <bean id="jungleFoods" class="com.loplop.springadvanced.tut1_18.beans.FoodMapJungle">
+        <property name="foods">
+            <props>
+                <prop key="gorilla">banana</prop>
+                <prop key="panda">bamboo</prop>
+                <prop key="snake">eggs</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="jungleAnimalFoods" class="com.loplop.springadvanced.tut1_18.beans.FoodBeanMap">
+        <property name="animalMap">
+            <map>
+                <entry key="lion" value-ref="lion"/>
+                <entry key="snake" value-ref="snake"/>
+            </map>
+        </property>
     </bean>
 </beans>

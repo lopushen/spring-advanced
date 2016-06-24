@@ -1,4 +1,4 @@
-package com.loplop.springadvanced.beans;
+package com.loplop.springadvanced.tut1_18.beans;
 
 import java.util.List;
 
