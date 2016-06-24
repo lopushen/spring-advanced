@@ -1,6 +1,7 @@
 package com.loplop.springadvanced;
 
 import com.loplop.springadvanced.beans.Address;
+import com.loplop.springadvanced.beans.FruitBasket;
 import com.loplop.springadvanced.beans.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -19,9 +20,13 @@ public class App {
         System.out.println(person2);
 
         Address address = context.getBean("address", Address.class);
-        Address address2 = context.getBean("address2", Address.class);
 
         System.out.println(address);
+
+        FruitBasket fruitBasket = context.getBean("basket", FruitBasket.class);
+
+        System.out.println(fruitBasket);
+
         ((ClassPathXmlApplicationContext) context).close();
     }
 }

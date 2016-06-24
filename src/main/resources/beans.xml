@@ -37,7 +37,18 @@ default-init-method="init" default-destroy-method="destroy">
 
 
     <bean id="address2" class="com.loplop.springadvanced.beans.Address" p:street="Pstreet name" p:postCode="ppp888">
+    </bean>
+    
+    <bean id="basket" class="com.loplop.springadvanced.beans.FruitBasket">
 
-
+        <constructor-arg index="0" value="John's basket"/>
+        <constructor-arg index="1">
+            <set>
+                <value>kiwi</value>
+                <value>banana</value>
+                <value>kokok</value>
+                <value>kisa</value>
+            </set>
+        </constructor-arg>
     </bean>
 </beans>
