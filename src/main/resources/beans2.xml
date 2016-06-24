@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="logger" class="com.loplop.springadvanced.tut19.beans.Logger" autowire="constructor">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+default-autowire="byType"
+default-autowire-candidates="*Writer">
+    <bean id="logger" class="com.loplop.springadvanced.tut19.beans.Logger">
 
     </bean>
     <bean id="consoleWriter" class="com.loplop.springadvanced.tut19.beans.ConsoleWriter">
 
     </bean>
     <bean name="fileWriter" class="com.loplop.springadvanced.tut19.beans.FileWriter">
+
+    </bean>
+
+    <bean name="swuirrel" class="com.loplop.springadvanced.tut19.beans.FileWriter">
 
     </bean>
 </beans>
