@@ -51,4 +51,33 @@ default-init-method="init" default-destroy-method="destroy">
             </set>
         </constructor-arg>
     </bean>
+
+    <bean id="jungle" class="com.loplop.springadvanced.beans.Jungle">
+        <property name="largest" >
+            <bean class="com.loplop.springadvanced.beans.Animal">
+                <property name="name" value="Inner Richard"/>
+                <property name="type" value="inner elephant"/>
+            </bean>
+        </property>
+        <property name="animals">
+            <list>
+                <ref bean="elephant"/>
+                <ref bean="snake"/>
+                <ref bean="lion"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="lion" class="com.loplop.springadvanced.beans.Animal">
+        <property name="name" value="Igor"/>
+        <property name="type" value="lion"/>
+    </bean>
+    <bean id="elephant" class="com.loplop.springadvanced.beans.Animal">
+        <property name="name" value="Richard"/>
+        <property name="type" value="elephant"/>
+    </bean>
+    <bean id="snake" class="com.loplop.springadvanced.beans.Animal">
+        <property name="name" value="Bob"/>
+        <property name="type" value="snake"/>
+    </bean>
 </beans>
