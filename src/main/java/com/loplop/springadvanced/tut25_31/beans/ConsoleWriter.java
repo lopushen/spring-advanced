@@ -1,11 +1,11 @@
-package com.loplop.springadvanced.tut25.beans;
+package com.loplop.springadvanced.tut25_31.beans;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by i.lopushen on 24/06/2016.
  */
-@Qualifier("toConsole")
+@Component
 public class ConsoleWriter implements LogWriter {
     public void write(String text) {
         System.out.println("Writing to a console... "+text);

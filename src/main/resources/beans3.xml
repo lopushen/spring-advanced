@@ -6,19 +6,19 @@
        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-    <bean id="logger" class="com.loplop.springadvanced.tut25.beans.Logger">
+    <!--<bean id="logger" class="Logger">-->
 
-    </bean>
-    <bean id="consoleWriter" class="com.loplop.springadvanced.tut25.beans.ConsoleWriter">
-        <qualifier value="toConsole"/>
-    </bean>
+    <!--</bean>-->
+    <!--<bean id="consoleWriter" class="ConsoleWriter">-->
+        <!--<qualifier value="toConsole"/>-->
+    <!--</bean>-->
 
-    <bean id="squirrelWriter" class="com.loplop.springadvanced.tut25.beans.ConsoleWriter">
+    <!--<bean id="squirrelWriter" class="ConsoleWriter">-->
 
-    </bean>
-    <bean name="mongoose" class="com.loplop.springadvanced.tut25.beans.FileWriter">
+    <!--</bean>-->
+    <!--<bean name="mongoose" class="FileWriter">-->
 
-    </bean>
+    <!--</bean>-->
     <context:annotation-config/>
     <context:component-scan base-package="com.loplop.springadvanced.tut25.beans"/>
 </beans>

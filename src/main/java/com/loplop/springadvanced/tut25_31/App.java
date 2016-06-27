@@ -1,6 +1,7 @@
-package com.loplop.springadvanced.tut25.beans;
+package com.loplop.springadvanced.tut25_31;
 
 
+import com.loplop.springadvanced.tut25_31.beans.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

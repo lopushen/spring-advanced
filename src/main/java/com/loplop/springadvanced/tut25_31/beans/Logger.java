@@ -1,30 +1,27 @@
-package com.loplop.springadvanced.tut25.beans;
+package com.loplop.springadvanced.tut25_31.beans;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.annotation.Resource;
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.Optional;
 
 /**
  * Created by i.lopushen on 24/06/2016.
  */
+@Component
 public class Logger {
 
-    private ConsoleWriter consoleWriter;
+    private LogWriter consoleWriter;
 
     private LogWriter fileWriter;
 
     @Inject
-    public void setConsoleWriter(ConsoleWriter consoleWriter) {
-        this.consoleWriter = consoleWriter;
+    public void setConsoleWriter(ConsoleWriter writer) {
+        this.consoleWriter = writer;
     }
     @Inject
-    @Named("mongoose")
     public void setFileWriter(LogWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
