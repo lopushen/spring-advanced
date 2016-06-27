@@ -1,6 +1,7 @@
 package com.loplop.springadvanced.tut25.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Optional;
 
@@ -13,7 +14,8 @@ public class Logger {
 
     private FileWriter fileWriter;
 
-    @Autowired(required = false)
+    @Autowired
+
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
