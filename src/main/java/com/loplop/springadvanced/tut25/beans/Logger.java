@@ -3,7 +3,11 @@ package com.loplop.springadvanced.tut25.beans;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.Optional;
 
 /**
@@ -15,11 +19,12 @@ public class Logger {
 
     private LogWriter fileWriter;
 
-    @Resource
+    @Inject
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
-    @Resource
+    @Inject
+    @Named("mongoose")
     public void setFileWriter(LogWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
@@ -30,5 +35,16 @@ public class Logger {
 
     public void writeConsole(String text) {
         Optional.ofNullable(consoleWriter).ifPresent(cw -> cw.write(text));
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Init -------->");
+    }
+
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Destroy -------->");
     }
 }

@@ -16,7 +16,7 @@
     <bean id="squirrelWriter" class="com.loplop.springadvanced.tut25.beans.ConsoleWriter">
 
     </bean>
-    <bean name="fileWriter" class="com.loplop.springadvanced.tut25.beans.FileWriter">
+    <bean name="mongoose" class="com.loplop.springadvanced.tut25.beans.FileWriter">
 
     </bean>
     <context:annotation-config/>
