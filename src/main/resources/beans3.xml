@@ -9,9 +9,9 @@
     <bean id="logger" class="com.loplop.springadvanced.tut25.beans.Logger">
 
     </bean>
-    <bean id="consoleWriter" class="com.loplop.springadvanced.tut25.beans.ConsoleWriter">
+    <!--<bean id="consoleWriter" class="com.loplop.springadvanced.tut25.beans.ConsoleWriter">-->
 
-    </bean>
+    <!--</bean>-->
     <bean name="fileWriter" class="com.loplop.springadvanced.tut25.beans.FileWriter">
 
     </bean>

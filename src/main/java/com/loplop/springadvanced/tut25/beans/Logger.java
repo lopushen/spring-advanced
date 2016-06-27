@@ -2,15 +2,18 @@ package com.loplop.springadvanced.tut25.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Optional;
+
 /**
  * Created by i.lopushen on 24/06/2016.
  */
 public class Logger {
-    @Autowired
+
     private ConsoleWriter consoleWriter;
 
     private FileWriter fileWriter;
 
+    @Autowired(required = false)
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
@@ -24,6 +27,6 @@ public class Logger {
     }
 
     public void writeConsole(String text) {
-        consoleWriter.write(text);
+        Optional.ofNullable(consoleWriter).ifPresent(cw -> cw.write(text));
     }
 }
