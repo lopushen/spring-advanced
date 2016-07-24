@@ -11,3 +11,4 @@ workspace.xml
 hs_err_pid*
 /target/
 spring-advanced.iml
+.idea/
