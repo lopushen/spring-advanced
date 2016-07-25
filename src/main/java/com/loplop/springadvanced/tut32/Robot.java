@@ -18,14 +18,14 @@ public class Robot {
     }
 
     @Autowired
-    public void setId(@Value("#{randomText.getText()?.length()}")String id) {
+    public void setId(@Value("${password}")String id) {
         this.id = id;
     }
 
     //can also be @Value("#{new java.util.Date().toString()
     //
     @Autowired
-    public void setSpeech(@Value("#{T(Math).sin(T(Math).PI/4)^2 eq 1 ? 2: 0}") String speech) {
+    public void setSpeech(@Value("${user}") String speech) {
         this.speech = speech;
     }
 }

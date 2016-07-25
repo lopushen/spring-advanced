@@ -14,6 +14,6 @@ public class App {
 
         robot.speak();
 
-        ((ClassPathXmlApplicationContext)context).close();
+        ((ClassPathXmlApplicationContext) context).close();
     }
 }
