@@ -14,8 +14,9 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans39.xml");
+        OffersDAO offersDAO = context.getBean("offersDAO", OffersDAO.class);
         try{
-            context.getBean("offersDAO", OffersDAO.class).getOffers().forEach(System.out::println);
+            offersDAO.getOffers().forEach(System.out::println);
         }
         catch (CannotGetJdbcConnectionException e) {
             System.out.println("There's been a problem in connecting to the DB");
@@ -27,6 +28,7 @@ public class App {
             System.out.println(e.getMessage());
             System.out.println(e.getClass());
         }
+        System.out.println(offersDAO.getOffer("Lovecraft"));
 
 
         ((ClassPathXmlApplicationContext) context).close();
