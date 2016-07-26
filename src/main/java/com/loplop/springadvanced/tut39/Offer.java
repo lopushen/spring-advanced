@@ -5,16 +5,25 @@ package com.loplop.springadvanced.tut39;
  */
 public class Offer {
     private Integer id;
-    private String name;
+    private String username;
     private String email;
     private String text;
 
-    public String getName() {
-        return name;
+    public Offer() {
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Offer(String username, String email, String text) {
+        this.username = username;
+        this.email = email;
+        this.text = text;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String name) {
+        this.username = name;
     }
 
     public String getEmail() {
@@ -45,7 +54,7 @@ public class Offer {
     public String toString() {
         return "Offer{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", text='" + text + '\'' +
                 '}';

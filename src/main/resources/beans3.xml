@@ -20,5 +20,5 @@
 
     <!--</bean>-->
     <context:annotation-config/>
-    <context:component-scan base-package="com.loplop.springadvanced.tut25.beans"/>
+    <context:component-scan base-package="com.loplop.springadvanced.tut25_31.beans"/>
 </beans>

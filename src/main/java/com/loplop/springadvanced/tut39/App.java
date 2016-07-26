@@ -1,6 +1,5 @@
 package com.loplop.springadvanced.tut39;
 
-import com.loplop.springadvanced.tut32.Robot;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DataAccessException;
@@ -15,6 +14,8 @@ public class App {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans39.xml");
         OffersDAO offersDAO = context.getBean("offersDAO", OffersDAO.class);
+
+        OffersProvider offersProvider = context.getBean("offersProvider", OffersProvider.class);
         try{
             offersDAO.getOffers().forEach(System.out::println);
         }
@@ -30,7 +31,28 @@ public class App {
         }
         System.out.println(offersDAO.getOffer("Lovecraft"));
 
+        offersDAO.deleteOffer(1);
 
+
+
+        Offer offer = new Offer();
+        offer.setText("The text");
+        offer.setUsername("Jack");
+        offer.setEmail("Jack@gmail.com");
+
+        offersDAO.create(offer);
+        List<Offer> offers = offersDAO.getOffers();
+        offers.forEach(System.out::println);
+
+        offer.setEmail("govnomail@gmail.com");
+        offersDAO.updateOffer(offer);
+
+
+        offersDAO.create(offersProvider.provideOffers());
+        
+        offers = offersDAO.getOffers();
+        offers.forEach(System.out::println);
         ((ClassPathXmlApplicationContext) context).close();
+
     }
 }
