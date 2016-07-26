@@ -49,9 +49,16 @@ public class App {
 
 
         offersDAO.create(offersProvider.provideOffers());
-        
+
         offers = offersDAO.getOffers();
         offers.forEach(System.out::println);
+
+        offersDAO.create(offersProvider.provideViolationOffers());
+
+
+        offers = offersDAO.getOffers();
+        offers.forEach(System.out::println);
+
         ((ClassPathXmlApplicationContext) context).close();
 
     }

@@ -18,6 +18,13 @@ public class Offer {
         this.text = text;
     }
 
+    public Offer(Integer id, String username, String email, String text) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.text = text;
+    }
+
     public String getUsername() {
         return username;
     }

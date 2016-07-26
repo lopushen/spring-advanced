@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.namedparam.*;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -16,7 +17,7 @@ public class OffersDAO {
 
     public static final int HAPPY_OUTCOME_CODE = 1;
     public static final String UPDATE = "UPDATE offers SET username=:username, email=:email, text=text where id=:id";
-    public static final String CREATE = "insert into offers (username, text, email) values (:username, :text, :email)";
+    public static final String CREATE = "insert into offers (id, username, text, email) values (:id, :username, :text, :email)";
     private NamedParameterJdbcTemplate template;
 
     @Autowired
@@ -80,6 +81,7 @@ public class OffersDAO {
         template.update(UPDATE, source);
     }
 
+    @Transactional
     public int[] create(List<Offer> offers) {
        SqlParameterSource[] parameterSources = SqlParameterSourceUtils.createBatch(offers.toArray());
 

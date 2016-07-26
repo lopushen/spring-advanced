@@ -21,4 +21,14 @@ public class OffersProvider {
         return offers;
     }
 
+    public List<Offer> provideViolationOffers() {
+        List<Offer> offers = new ArrayList<>();
+        offers.add(new Offer(1,"Karen", "karen@gmail.com", "Karen's text"));
+        offers.add(new Offer(2,"Kim", "Kim@gmail.com", "Kim's text"));
+        offers.add(new Offer(1,"Steve", "Steve@gmail.com", "Steve's text"));
+        offers.add(new Offer(1,"Frank", "Frank@gmail.com", "Frank's text"));
+
+        return offers;
+    }
+
 }
